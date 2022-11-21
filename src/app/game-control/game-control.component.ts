@@ -7,6 +7,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class GameControlComponent implements OnInit {
 
+  intervalId;
+  i = 0;
   @Output() eventTimerStarted = new EventEmitter<number>();
  
 
@@ -17,18 +19,16 @@ export class GameControlComponent implements OnInit {
 
 
   onClickEmitter(){
-   
-    let i = 0;
-    let intervalId = setInterval(()=>{
-      this.eventTimerStarted.emit(i);
-      i++;
-    },3000);
+    this.intervalId = setInterval(()=>{
+      this.eventTimerStarted.emit(this.i);
+      this.i++;
+    },1000);
 
     
   }
 
   onCancelEmitter(){
-
+    clearInterval(this.intervalId);
   }
 
 }

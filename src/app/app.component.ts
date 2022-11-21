@@ -9,7 +9,7 @@ export class AppComponent {
 
 arrayElements = [];
 
-  onTimerStarted(val){
+  onTimerStarted(val:number){
     this.arrayElements.push(val);
     
   }
