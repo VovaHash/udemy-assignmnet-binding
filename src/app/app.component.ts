@@ -7,11 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-arrayElements = [];
+// evenArray: number[] = [];
+// oddArray: number[] = [];
+arrayElements:number[]=[];
 
   onTimerStarted(val:number){
+    // if(val%2===0){
+    //   this.evenArray.push(val);
+    // } else {
+    //   this.oddArray.push(val);
+    // }
     this.arrayElements.push(val);
-    
   }
 
 

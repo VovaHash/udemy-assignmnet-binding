@@ -15,9 +15,11 @@
       <hr>
       <h3>Solution</h3>
       <app-game-control (eventTimerStarted)="onTimerStarted($event)"></app-game-control>
+      <!-- <app-even *ngFor="let evenElement of evenArray" [number]="evenElement"></app-even>
+      <app-odd *ngFor="let oddElement of oddArray" [number]="oddElement"></app-odd> -->
       <p *ngFor="let arrayElement of arrayElements">
-        <app-odd *ngIf="arrayElement%2!==0">{{arrayElement}}</app-odd>
-        <app-even *ngIf="arrayElement%2===0">{{arrayElement}}</app-even>
+        <app-odd *ngIf="arrayElement%2!==0" [number]="arrayElement"></app-odd>
+        <app-even *ngIf="arrayElement%2===0" [number]="arrayElement"></app-even>
       </p>
     </div>
   </div>
